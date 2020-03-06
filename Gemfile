@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Manually added gems
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 2.0' #画像のアップロード
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
