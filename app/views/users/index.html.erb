@@ -1,2 +1,23 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% provide(:title, 'Users') %>
+<div class="form content">
+    <h1 class="text-center">List of Users</h1>
+    <%= will_paginate %>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-6">
+                <ul class="users">
+                    <% @users.each do |user| %>
+                        <li>
+                            <%= user_avatar(user, "user-img") %>
+                            <%= link_to user.name, user %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="col-6">
+
+            </div>
+        </div>
+    <%= will_paginate %>
+    </div>
+</div>

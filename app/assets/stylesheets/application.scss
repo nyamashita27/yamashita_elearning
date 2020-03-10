@@ -17,6 +17,7 @@
  *= require_self
  */
 
+//  user show page
  .user-profile {
     width: 150px;
     height: 150px;
@@ -24,4 +25,23 @@
 
 .card-header {
     text-align: center;
+}
+
+// user list
+.users {
+    list-style: none;
+    margin: 0;
+    li {
+      overflow: auto;
+      padding: 15px 0;
+      border-top: 1px solid rgb(238, 238, 238);
+      &:last-child {
+        border-bottom: 1px solid rgb(238, 238, 238);
+      }
+    }
+}
+
+.user-img{
+    width: 70px;
+    height: 70px;
 }
