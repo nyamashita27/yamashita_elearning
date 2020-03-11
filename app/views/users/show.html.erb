@@ -12,17 +12,15 @@
                     <p class="card-text"><%= @user.email %><p>
                     <%= render 'follow_form' %>
                     <% @user ||= current_user %>
-                    <div class="stats">
-                            <strong id="following" class="stat">
-                                <%= @user.followed_users.count %>
-                            </strong>
-                            following
-            
-                            <strong id="followers" class="stat">
-                                <%= @user.followers.count %>
-                            </strong>
-                            followers
-                      
+                    <div class="stats mt-3">
+                        <strong id="following" class="stat">
+                            <%= @user.followed_users.count %>
+                        </strong>
+                        following        
+                        <strong id="followers" class="stat">
+                            <%= @user.followers.count %>
+                        </strong>
+                        followers                     
                     </div>                    
                 </div>
             </div>
