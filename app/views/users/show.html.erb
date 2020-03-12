@@ -16,8 +16,7 @@
                         </li>
                         <li class="list-group-item">
                             <div class="stats mt-3">
-                                <% @user ||= current_user %>
-                                <div class="following-number">
+                               <div class="following-number">
                                     <strong id="following" class="stat">
                                         <%= @user.followed_users.count %>
                                     </strong><br>
@@ -30,10 +29,6 @@
                                     followers
                                 </div>                     
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            5<br>
-                            words learned
                         </li>
                     </ul>                    
                 </div>
