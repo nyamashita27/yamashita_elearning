@@ -9,19 +9,28 @@
                 <div class="card-body p-4 text-center">
                     <%= user_avatar(@user, "user-profile") %><br>
                     <h5 class="card-title mt-3"><%= @user.name %></h1>
-                    <p class="card-text"><%= @user.email %><p>
-                    <%= render 'follow_form' %>
-                    <% @user ||= current_user %>
-                    <div class="stats mt-3">
-                        <strong id="following" class="stat">
-                            <%= @user.followed_users.count %>
-                        </strong>
-                        following        
-                        <strong id="followers" class="stat">
-                            <%= @user.followers.count %>
-                        </strong>
-                        followers                     
-                    </div>                    
+                    <p class="card-text"><%= @user.email %><p>                
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <%= render 'follow_form' %>                        
+                        </li>
+                        <li class="list-group-item">
+                            <div class="stats mt-3">
+                               <div class="following-number">
+                                    <strong id="following" class="stat">
+                                        <%= @user.followed_users.count %>
+                                    </strong><br>
+                                    following
+                                </div>
+                                <div class="follower-number">
+                                    <strong id="followers" class="stat">
+                                        <%= @user.followers.count %>
+                                    </strong><br>
+                                    followers
+                                </div>                     
+                            </div>
+                        </li>
+                    </ul>                    
                 </div>
             </div>
         </div>
