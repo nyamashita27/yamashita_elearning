@@ -19,48 +19,48 @@
 
 //  user show page
  .user-profile {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .card-header {
-    text-align: center;
+  text-align: center;
 }
 
 .following-number{
-    width: 50%;
-    float: left;
+  width: 50%;
+  float: left;
 }
 
 .followers-number{
-    width: 50%;
+  width: 50%;
 }
 
 // user list
 .users {
-    list-style: none;
-    margin: 0;
-    li {
-        overflow: auto;
-        padding: 15px 0;
-        border-top: 1px solid rgb(238, 238, 238);
-        &:last-child {
-            border-bottom: 1px solid rgb(238, 238, 238);
-        }
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 15px 0;
+    border-top: 1px solid rgb(238, 238, 238);
+    &:last-child {
+      border-bottom: 1px solid rgb(238, 238, 238);
     }
+  }
 }
 
 .user-img{
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
 // admin home
 .btn-admin{
-    width: 80%;
+  width: 80%;
 }
 
 .btn-back{
-    width: 30%;
-    margin: 0 auto;
+  width: 30%;
+  margin: 0 auto;
 }
