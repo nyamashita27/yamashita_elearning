@@ -1,0 +1,37 @@
+<% provide(:title, 'Categories') %>
+    <h1 class="text-center">All Categories</h1>
+    <%= link_to "Create New Category", admin_new_path, class: "btn btn-primary mx-auto my-4 btn-block btn-admin" %> 
+<div class="container">
+    <div class="pagination justify-content-center mt-2">
+        <%= will_paginate %>
+    </div> 
+    <div class="row">
+        <div class="col-12 mx-auto">    
+            <table class="table">
+                <thead class="text-center">
+                    <tr>           
+                        <th scope="col">Title</th>
+                        <th scope="col">Descriotion</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @categories.each do |category| %>                    
+                        <tr>
+                            <td><%= category.title %></td>
+                            <td><%= category.description %></td>
+                            <td class="text-center">
+                                <%= link_to "Edit", "#", method: :patch, class: "btn btn-outline-success btn-block" %>
+                                <%= link_to "Delete", "#", method: :patch, class: "btn btn-danger btn-block" %>
+                            </td>
+                        </tr>
+                    <% end %>                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="pagination justify-content-center mt-2">
+        <%= will_paginate %>
+    </div> 
+    <%= link_to "Back to Admin Page", admin_home_path, class: "btn btn-outline-secondary btn-block btn-admin my-4 mx-auto" %>
+</div>
