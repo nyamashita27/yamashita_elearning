@@ -1,0 +1,29 @@
+<% provide(:title, 'Users') %>
+<div class="form content">
+    <h1 class="text-center">List of Users</h1>
+    <div class="pagination justify-content-center mt-4">
+        <%= will_paginate %>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <% @users.each do |user| %>            
+                <div class="col-6">
+                    <ul class="users">
+                        <li>
+                            <%= user_avatar(user, "user-img") %>
+                            <%= link_to user.name, user %>
+                            <% if user.admin? %>
+                                <%= link_to "Remove", admin_user_path(user), method: :delete, class: "btn btn-danger btn-ra mt-3" %>
+                            <% else %>                               
+                                <%= link_to "Add", admin_user_path(user), method: :patch, class: "btn btn-primary btn-ra mt-3" %>
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+        <div class="pagination justify-content-center mt-2">
+            <%= will_paginate %>
+        </div>
+    </div>
+</div>
