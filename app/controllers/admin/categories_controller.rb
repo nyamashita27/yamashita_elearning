@@ -14,16 +14,16 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-        flash[:success] = "Created new category!" #successはbootstrapの色、青
-        redirect_to admin_categories_path
-      else
-        render 'new'
-      end
+      flash[:success] = "Created new category!" #successはbootstrapの色、青
+      redirect_to admin_categories_path
+    else
+      render 'new'
+    end
   end
 
   private
     def category_params
-        params.require(:category).permit(:title, :description)
+      params.require(:category).permit(:title, :description)
     end
 
 end

@@ -1,6 +1,6 @@
 <% provide(:title, 'Categories') %>
-    <h1 class="text-center">All Categories</h1>
-    <%= link_to "Create New Category", admin_new_path, class: "btn btn-primary mx-auto my-4 btn-block btn-admin" %> 
+<h1 class="text-center">All Categories</h1>
+<%= link_to "Create New Category", new_admin_category_path, class: "btn btn-primary mx-auto my-4 btn-block btn-cat" %> 
 <div class="container">
     <div class="pagination justify-content-center mt-2">
         <%= will_paginate %>
@@ -33,5 +33,5 @@
     <div class="pagination justify-content-center mt-2">
         <%= will_paginate %>
     </div> 
-    <%= link_to "Back to Admin Page", admin_home_path, class: "btn btn-outline-secondary btn-block btn-admin my-4 mx-auto" %>
+    <%= link_to "Back to Admin Page", admin_home_path, class: "btn btn-outline-secondary btn-block btn-cat my-4 mx-auto" %>
 </div>

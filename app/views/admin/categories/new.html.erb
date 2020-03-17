@@ -3,20 +3,7 @@
     <h1 class="text-center">Create new category</h1>
     <div class="container">
         <div class="category-new">        
-            <%= form_for [:admin, @category] do |f| %>
-                <%= render 'shared/error_messages', object: f.object %>
-                <div class="form-group">
-                    <%= f.label :title %>
-                    <%= f.text_field :title, class: "form-control"%>
-                </div>
-                <div class="form-group">
-                    <%= f.label :descriotion %>
-                    <%= f.text_field :description, class: "form-control"%>
-                </div>
-                <div class="form-group">
-                    <%= f.submit "Create new category", class: "btn btn-block btn-primary" %>
-                </div>
-            <% end %>
+            <%= render 'form' %>
             <%= link_to "Back to Categories List", admin_categories_path, class: "btn btn-outline-secondary btn-block my-1" %>
         </div>
     </div>
