@@ -11,7 +11,7 @@
                 <thead class="text-center">
                     <tr>           
                         <th scope="col">Title</th>
-                        <th scope="col">Descriotion</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -21,8 +21,8 @@
                             <td><%= category.title %></td>
                             <td><%= category.description %></td>
                             <td class="text-center">
-                                <%= link_to "Edit", "#", method: :patch, class: "btn btn-outline-success btn-block" %>
-                                <%= link_to "Delete", "#", method: :patch, class: "btn btn-danger btn-block" %>
+                                <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-success btn-block" %>
+                                <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the category?" }%>
                             </td>
                         </tr>
                     <% end %>                    
