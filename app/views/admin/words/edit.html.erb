@@ -1,0 +1,11 @@
+<% provide(:title, "Edit Word") %>
+<div class="form content">
+    <h1 class="text-center">Edit</h1>
+    <p class="text-center">Edit the word here.</p>
+    <div class="container">
+        <div class="category-new">          
+            <%= render 'form', msg: "Update Word" %>
+            <%= link_to "Back to Words List", admin_categories_path, class: "btn btn-outline-secondary btn-block my-1" %>
+        </div>
+    </div>
+</div>
