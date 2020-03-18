@@ -1,2 +1,0 @@
-module Admin::WordsHelper
-end
