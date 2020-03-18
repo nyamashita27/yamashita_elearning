@@ -1,0 +1,11 @@
+<% provide(:title, 'Create new word') %>
+<div class="form content">
+    <h1 class="text-center">Create new word</h1>
+    <p class="text-center">Create a word here.</p>
+    <div class="container">
+        <div class="category-new">        
+            <%= render 'form', msg: "Create Word"%>
+            <%= link_to "Back to Words List", admin_category_words_path, class: "btn btn-outline-secondary btn-block btn-cat my-1" %>
+        </div>
+    </div>
+</div>
