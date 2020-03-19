@@ -14,28 +14,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 mx-auto">    
-            <table class="table">
-                <thead class="text-center">
-                    <tr>           
-                        <th scope="col">Words</th>
-                        <th scope="col">Answer</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @words.each do |word| %>                    
-                        <tr>
-                            <td><%= word.content %></td>
-                            <td><%= word.correct_answer %></td>
-                            <td class="text-center">
-                                <%= link_to "Edit", "#", class: "btn btn-outline-success btn-block" %>
-                                <%= link_to "Delete", "#", method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the word?" }%>
-                            </td>
+        <div class="col-12 mx-auto">
+            <% if @words.any?%>    
+                <table class="table">
+                    <thead class="text-center">
+                        <tr>           
+                            <th scope="col">Words</th>
+                            <th scope="col">Answer</th>
+                            <th scope="col">Action</th>
                         </tr>
-                    <% end %>                    
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <% @words.each do |word| %>                    
+                            <tr>
+                                <td><%= word.content %></td>
+                                <td><%= word.correct_answer %></td>
+                                <td class="text-center">
+                                    <%= link_to "Edit", edit_admin_category_word_path(@category, word), class: "btn btn-outline-success btn-block" %>
+                                    <%= link_to "Delete", admin_category_word_path(@category, word), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the word?" }%>
+                                </td>
+                            </tr>
+                        <% end %>                    
+                    </tbody>
+                </table>
+            <% else %>
+                <h3 class="text-center">No Available Words</h3>
+            <% end%>
         </div>
     </div>
     <div class="pagination justify-content-center mt-2">

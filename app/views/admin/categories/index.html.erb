@@ -6,28 +6,32 @@
         <%= will_paginate %>
     </div> 
     <div class="row">
-        <div class="col-12 mx-auto">    
-            <table class="table">
-                <thead class="text-center">
-                    <tr>           
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @categories.each do |category| %>                    
-                        <tr>
-                            <td><%= link_to category.title, admin_category_words_path(category) %></td>
-                            <td><%= category.description %></td>
-                            <td class="text-center">
-                                <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-success btn-block" %>
-                                <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the category?" }%>
-                            </td>
+        <div class="col-12 mx-auto">   
+            <% if @categories.any?%> 
+                <table class="table">
+                    <thead class="text-center">
+                        <tr>           
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
                         </tr>
-                    <% end %>                    
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <% @categories.each do |category| %>                    
+                            <tr>
+                                <td><%= link_to category.title, admin_category_words_path(category) %></td>
+                                <td><%= category.description %></td>
+                                <td class="text-center">
+                                    <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-success btn-block" %>
+                                    <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the category?" }%>
+                                </td>
+                            </tr>
+                        <% end %>                    
+                    </tbody>
+                </table>                        
+            <% else %>
+                <h3 class="text-center">No Available Categories</h3>
+            <% end %>
         </div>
     </div>
     <div class="pagination justify-content-center mt-2">

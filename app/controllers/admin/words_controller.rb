@@ -26,6 +26,28 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+    @category =  Category.find(params[:category_id]) 
+    @word = Word.find(params[:id])
+  end
+
+  def update
+    @word = Word.find(params[:id])
+    if @word.update_attributes(word_params)
+      flash[:success] = "Successfully updated the word!"
+      redirect_to admin_category_words_url
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @word = Word.find(params[:id])
+    @word.destroy
+    flash[:success] = "Successfully deleted the word!"
+    redirect_to admin_category_words_url
+  end
+
   private
     def word_params
       params.require(:word).permit(:content, choices_attributes: [:id, :content, :correct])
