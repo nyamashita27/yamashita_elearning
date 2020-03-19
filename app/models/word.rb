@@ -17,7 +17,6 @@ class Word < ApplicationRecord
   end
 
   def has_unique_choice
-
     if choices.uniq { |choice| choice.content }.length != 3
       return errors.add :base, "Must not have same answers!"
     end
