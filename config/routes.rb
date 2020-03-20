@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+ 
+  get '/categories', to: 'categories#index'
   namespace :admin do
     get 'home', to: 'static_pages#home'
     resources :users, only: [:index, :update, :destroy]
