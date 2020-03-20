@@ -1,0 +1,31 @@
+<% provide(:title, 'Categories') %>
+<h1 class="text-center">Categories</h1>
+<div class="text-center my-4">
+    <%= link_to "All", "#", class: "btn btn-primary btn-cat-top" %> 
+    <%= link_to "Learned", "#", class: "btn btn-primary btn-cat-top" %> 
+    <%= link_to "Not yet", "#", class: "btn btn-primary btn-cat-top" %> 
+</div>
+<div class="container">
+    <div class="pagination justify-content-center">
+        <%= will_paginate %>
+    </div> 
+    <div class="row">
+        <% @categories.each do |category| %>        
+            <div class="col-6">
+                <div class="card m-2">
+                    <div class="card-header">
+                        <h5 class="text-left con-left"><%= category.title %></h5>
+                        <h6 class="text-right"><%= pluralize(category.words.count, "Word") %></h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="con-left"><%= category.description %></p>
+                        <%= link_to "Start Lesson", "#", class: "btn btn-outline-success float-right" %> 
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="pagination justify-content-center my-3">
+        <%= will_paginate %>
+    </div> 
+</div>
