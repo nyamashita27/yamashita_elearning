@@ -5,6 +5,7 @@ class Word < ApplicationRecord
   validates :content, presence: true
   validate :has_one_correct_answer
   validate :has_unique_choice
+  has_many :answers, dependent: :destroy
 
   def correct_answer
     choices.find_by(correct: true).content

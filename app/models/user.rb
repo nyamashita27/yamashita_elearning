@@ -19,6 +19,7 @@ class User < ApplicationRecord
             class_name:  "Relationship",
             dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :lessons, dependent: :destroy
 
   # Follows a user
   def follow(other_user)
@@ -33,6 +34,11 @@ class User < ApplicationRecord
   # Returns true if the current user is following the other user
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
+  end
+
+  # the user already has taken the lesson
+  def lesson_taken(category_id)
+    lesson = lessons.find_by(category_id: category_id)
   end
 
 end

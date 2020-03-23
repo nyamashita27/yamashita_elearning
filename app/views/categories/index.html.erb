@@ -19,7 +19,12 @@
                     </div>
                     <div class="card-body">
                         <p class="con-left"><%= category.description %></p>
-                        <%= link_to "Start Lesson", "#", class: "btn btn-outline-success float-right" %> 
+                        <% lesson = current_user.lesson_taken(category.id) %>
+                        <% if lesson.nil? %>
+                            <%= link_to "Start Lesson", lessons_path(category_id: category.id), method: :post, class: "btn btn-outline-success float-right" %>
+                        <% else %>
+                            <%= link_to "Show Result", "#", class: "btn btn-success float-right" %>
+                        <% end%>
                     </div>
                 </div>
             </div>
