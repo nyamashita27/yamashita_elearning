@@ -1,0 +1,39 @@
+<% provide(:title, 'Result') %>
+<div class="container">
+    <h2 class="text-center"><%= @lesson.category.title %></h2>
+    <h5 class="text-center">This is your result.</h5>
+    <h6 class="text-center my-3">Correct Answer...<%= @lesson.result %> of <%= @lesson.words.count %></h6>
+    <div class="row">
+        <div class="col-10 mx-auto my-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Word</th>
+                        <th scope="col">Your Answer</th>
+                        <th scope="col">Correct Answer</th>
+                        <th scope="col"  class="text-center">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @answers.each do |answer| %>
+                        <tr>
+                            <td><%= answer.word.content %></td>
+                            <td><%= answer.choice.content %></td>
+                            <td><%= answer.word.correct_answer %></td>
+                            <td class="text-center">
+                                <% if answer.choice.correct %> 
+                                    <img src="/assets/correct.png" alt="correct" class="img-answer">
+                                <% else %>
+                                    <img src="/assets/wrong.png" alt="wrong" class="img-answer">
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <div class="pagination justify-content-center mt-4">
+                <%= will_paginate @answers %>
+            </div> 
+        </div>
+    </div>
+</div>
