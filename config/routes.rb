@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  get '/words', to: 'words#index'
+  
   get '/categories', to: 'categories#index'
   namespace :admin do
     get 'home', to: 'static_pages#home'
