@@ -28,7 +28,7 @@
                             </div>
                         </li>
                         <li class="list-group-item">
-                            5<br>
+                            <%= link_to current_user.answers.count, words_path, class: "link-txt font-weight-bold" %><br>
                             words learned
                         </li>
                     </ul>                    

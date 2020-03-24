@@ -20,7 +20,8 @@ class User < ApplicationRecord
             dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :lessons, dependent: :destroy
-
+  has_many :answers, through: :lessons # learned words用
+  
   # Follows a user
   def follow(other_user)
     relationships.create!(followed_id: other_user.id)
