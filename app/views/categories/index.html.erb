@@ -1,9 +1,9 @@
 <% provide(:title, 'Categories') %>
 <h1 class="text-center">Categories</h1>
 <div class="text-center my-4">
-    <%= link_to "All", "#", class: "btn btn-primary btn-cat-top" %> 
-    <%= link_to "Learned", "#", class: "btn btn-primary btn-cat-top" %> 
-    <%= link_to "Not yet", "#", class: "btn btn-primary btn-cat-top" %> 
+    <%= link_to "All", categories_path, class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == nil }" %> 
+    <%= link_to "Learned", categories_path(status: "1"), class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == "1" }" %> 
+    <%= link_to "Not yet", categories_path(status: "0"), class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == "0" }" %> 
 </div>
 <div class="container">
     <div class="pagination justify-content-center">
