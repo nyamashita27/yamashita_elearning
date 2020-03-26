@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :lessons, dependent: :destroy
   has_many :answers, through: :lessons # learned words用
+  has_many :activities, dependent: :destroy
   
   # Follows a user
   def follow(other_user)
