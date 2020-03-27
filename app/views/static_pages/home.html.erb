@@ -1,2 +1,17 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, 'Home') %>
+<div class="bg-img">
+    <div class="home-desc">
+        <h1 class="home-title text-center pt-4">Just Try It!</h1>
+        <h5 class="home-txt text-center">...and you can learn more!</h5>
+    </div>
+    <div class="row home-row text-center">
+        <div class="col-6">
+            <%= link_to "Sign up", signup_path, class: "btn btn-primary btn-admin" %>
+            <p class="p-1"><span class="home-btn-txt">New here? Please sign up!</span></p>
+        </div>
+        <div class="col-6">
+            <%= link_to "Log in", login_path, class: "btn btn-info btn-admin" %>
+            <p class="p-1"><span class="home-btn-txt">If you have already signed up, please login!</span></p>
+        </div>
+    </div>
+</div>

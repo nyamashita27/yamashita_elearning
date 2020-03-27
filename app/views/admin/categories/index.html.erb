@@ -1,8 +1,8 @@
 <% provide(:title, 'Categories') %>
 <h1 class="text-center">All Categories</h1>
-<%= link_to "Create New Category", new_admin_category_path, class: "btn btn-primary mx-auto my-4 btn-block btn-cat" %> 
+<%= link_to "Create New Category", new_admin_category_path, class: "btn btn-warning mx-auto my-4 btn-block btn-cat" %> 
 <div class="container">
-    <div class="pagination justify-content-center mt-2">
+    <div class="pagination justify-content-center my-3">
         <%= will_paginate %>
     </div> 
     <div class="row">
@@ -22,8 +22,8 @@
                                 <td><%= link_to category.title, admin_category_words_path(category) %></td>
                                 <td><%= category.description %></td>
                                 <td class="text-center">
-                                    <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-success btn-block" %>
-                                    <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the category?" }%>
+                                    <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-warning btn-block" %>
+                                    <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-outline-danger btn-block", data: { confirm: "Are you sure to delete the category?" }%>
                                 </td>
                             </tr>
                         <% end %>                    

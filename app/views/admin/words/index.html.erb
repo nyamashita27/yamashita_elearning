@@ -10,7 +10,7 @@
             <h5><%= @category.description %></h5>
         </div>
         <div class="col-6">
-            <%= link_to "Create New Word", new_admin_category_word_path, class: "btn btn-primary mx-auto my-4 btn-block btn-cat" %> 
+            <%= link_to "Create New Word", new_admin_category_word_path, class: "btn btn-warning mx-auto my-4 btn-block btn-cat" %> 
         </div>
     </div>
     <div class="row">
@@ -30,8 +30,8 @@
                                 <td><%= word.content %></td>
                                 <td><%= word.correct_answer %></td>
                                 <td class="text-center">
-                                    <%= link_to "Edit", edit_admin_category_word_path(@category, word), class: "btn btn-outline-success btn-block" %>
-                                    <%= link_to "Delete", admin_category_word_path(@category, word), method: :delete, class: "btn btn-danger btn-block", data: { confirm: "Are you sure to delete the word?" }%>
+                                    <%= link_to "Edit", edit_admin_category_word_path(@category, word), class: "btn btn-warning btn-word mr-1" %>
+                                    <%= link_to "Delete", admin_category_word_path(@category, word), method: :delete, class: "btn btn-outline-danger btn-word", data: { confirm: "Are you sure to delete the word?" }%>
                                 </td>
                             </tr>
                         <% end %>                    
