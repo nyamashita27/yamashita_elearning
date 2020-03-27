@@ -9,20 +9,20 @@
                     <% if activity.user == current_user %>
                         <%= link_to "You", user_path(current_user) %> learned 
                         <%= activity.action.result %> of <%= activity.action.category.words.count %> in 
-                        <%= link_to activity.action.category.title, lesson_path(activity.action.id) %> .
+                        <%= link_to activity.action.category.title, lesson_path(activity.action.id) %>.
                     <% else%>
                         <%= link_to activity.user.name, user_path(activity.user) %> learned 
                         <%= activity.action.result %> of <%= activity.action.category.words.count %> in 
-                        <%= link_to activity.action.category.title, lesson_path(activity.action.id) %> .
+                        <%= link_to activity.action.category.title, lesson_path(activity.action.id) %>.
                     <%end%>
                 <% else %>
                     <% followed_user = User.find_by(id: activity.action.followed_id)%>                        
                     <% if activity.user == current_user %>   
                         <%= link_to "You", user_path(current_user) %> followed 
-                        <%= link_to followed_user.name, user_path(followed_user) %> .
+                        <%= link_to followed_user.name, user_path(followed_user) %>.
                     <% else%>
                         <%= link_to activity.user.name, user_path(activity.user) %> followed 
-                        <%= link_to followed_user.name, user_path(followed_user) %> .
+                        <%= link_to followed_user.name, user_path(followed_user) %>.
                     <%end%>
                 <% end %>
                 <p class="text-secondary mt-3 txt-time"><%= time_ago_in_words(activity.created_at) %> ago.</p>
