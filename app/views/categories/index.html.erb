@@ -1,12 +1,12 @@
 <% provide(:title, 'Categories') %>
 <h1 class="text-center">Categories</h1>
 <div class="text-center my-4">
-    <%= link_to "All", categories_path, class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == nil }" %> 
-    <%= link_to "Learned", categories_path(status: "1"), class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == "1" }" %> 
-    <%= link_to "Not yet", categories_path(status: "0"), class: "btn btn-outline-primary btn-cat-top #{'filtering' if params[:status] == "0" }" %> 
+    <%= link_to "All", categories_path, class: "btn btn-outline-info btn-cat-top #{'filtering' if params[:status] == nil }" %> 
+    <%= link_to "Learned", categories_path(status: "1"), class: "btn btn-outline-info btn-cat-top #{'filtering' if params[:status] == "1" }" %> 
+    <%= link_to "Not yet", categories_path(status: "0"), class: "btn btn-outline-info btn-cat-top #{'filtering' if params[:status] == "0" }" %> 
 </div>
 <div class="container">
-    <div class="pagination justify-content-center">
+    <div class="pagination justify-content-center my-3">
         <%= will_paginate %>
     </div> 
     <div class="row">
@@ -21,9 +21,9 @@
                         <p class="con-left"><%= category.description %></p>
                         <% lesson = current_user.lesson_taken(category.id) %>
                         <% if lesson.nil? %>
-                            <%= link_to "Start Lesson", lessons_path(category_id: category.id), method: :post, class: "btn btn-outline-success float-right" %>
+                            <%= link_to "Start Lesson", lessons_path(category_id: category.id), method: :post, class: "btn btn-outline-info float-right" %>
                         <% else %>
-                            <%= link_to "Show Result", lesson_path(lesson), class: "btn btn-success float-right" %>
+                            <%= link_to "Show Result", lesson_path(lesson), class: "btn btn-info float-right" %>
                         <% end%>
                     </div>
                 </div>

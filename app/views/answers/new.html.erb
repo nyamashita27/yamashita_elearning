@@ -15,7 +15,7 @@
                         <%= form_for([@lesson, @answer]) do |f| %>
                             <%= f.hidden_field :word_id, value: choice.word_id %>
                             <%= f.hidden_field :choice_id, value: choice.id %>
-                            <%= f.submit choice.content, class:"btn btn-primary mx-3 my-4 btn-lesson" %>
+                            <%= f.submit choice.content, class:"btn btn-info mx-3 my-4 btn-lesson" %>
                         <% end %>
                     <% end%>
                 </div>

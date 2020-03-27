@@ -1,6 +1,5 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -17,7 +16,108 @@
  *= require_self
  */
 
-//  user show page
+// font
+* {
+  font-family: 'Baloo Da 2', cursive;
+}
+
+a {
+  font-size: 18px;
+  color:#5bc0de;  
+}
+
+.btn{
+  font-size: 18px;
+}
+
+.card-header{
+  font-size: 20px;
+}
+
+#logo{
+  font-size: 30px;
+  color: #5bc0de;
+}
+
+// pagination
+.pagination * {
+  border-radius:25px;
+  font-size: 18px;
+  padding: 0px 6px;
+}
+
+.pagination {
+  margin: auto;
+  text-align: center;
+  a {
+    color:#5bc0de;
+  }
+  .page-item {
+    .page-link {
+      text-decoration: none;
+      border-radius: 22.5px;
+      font-family: 'Baloo Da 2', cursive;  
+    }
+  }
+  .active {
+    .page-link{
+      background:#5bc0de;
+      border: none;
+    }
+  }
+  .disabled{
+    .page-link{
+      border: none; 
+      color: #696969;
+    }
+  }
+}
+
+.card, .card-header{
+  border-color: #499AB3;
+}
+
+// home
+.bg-img{
+  background-image: url(/assets/home.jpg);
+  background-size: cover;
+  height : 90vh;
+  position: relative;
+}
+
+.home-desc{
+  padding-top: 60px;  
+}
+
+.home-title{
+  font-size: 60px;
+  color: white;
+}
+
+.home-txt{
+  color: lightgray;
+}
+
+.home-row{
+  margin-top: 250px;
+}
+
+.home-btn-txt {
+  background-color: rgba($color:white, $alpha: 0.6);
+}
+
+// about
+.about-atf{
+  width: 500px;
+}
+
+//sign up, log in
+.signup-new{
+  width: 70%;
+  margin: 0 auto;
+}
+
+// user show page
  .user-profile {
   width: 150px;
   height: 150px;
@@ -82,6 +182,11 @@
   margin: 0 auto;
 }
 
+//word index
+.btn-word{
+  width: 30%;
+}
+
 //user-category
 .btn-cat-top{
   width: 25%;
@@ -91,7 +196,7 @@
   float: left;
 }
 
-//lesson - answer btn
+// lesson - answer btn
 .btn-lesson{
   width: 29%;
   float: left;
@@ -99,10 +204,6 @@
 
 .img-answer{
   width: 25px;
-}
-
-.link-txt{
-  text-decoration: underline;
 }
 
 // activity feed
@@ -115,8 +216,8 @@
   font-size: small;
 }
 
-//category filter
+// category filter
 .filtering {
-  background-color: #0275d8;
+  background-color: #5bc0de;
   color: white;
 }
