@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Manually added gems
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
-gem 'carrierwave', '~> 2.0' #画像のアップロード
+gem 'carrierwave', '~> 2.1' #画像のアップロード
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
